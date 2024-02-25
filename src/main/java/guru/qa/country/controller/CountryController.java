@@ -28,4 +28,9 @@ public class CountryController {
   public List<Country> addAll(@RequestBody List<Country> countries) {
     return countryService.addAllCountries(countries);
   }
+
+  @PostMapping("/addCountry")
+  public Country addCountry(@RequestBody Country country) {
+    return countryService.addCountry(country);
+  }
 }

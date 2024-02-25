@@ -33,4 +33,9 @@ public class CountryService {
         .map(Country::fromEntity)
         .toList();
   }
+
+  public Country addCountry(Country country) {
+    var entity = Country.toEntity(country);
+    return Country.fromEntity(countryRepository.save(entity));
+  }
 }
