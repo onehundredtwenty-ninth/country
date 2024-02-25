@@ -5,6 +5,7 @@ import guru.qa.country.service.CountryService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,5 +33,10 @@ public class CountryController {
   @PostMapping("/addCountry")
   public Country addCountry(@RequestBody Country country) {
     return countryService.addCountry(country);
+  }
+
+  @PatchMapping("/updateCountryName")
+  public Country updateCountryName(@RequestBody Country country) {
+    return countryService.updateCountryName(country);
   }
 }

@@ -38,4 +38,10 @@ public class CountryService {
     var entity = Country.toEntity(country);
     return Country.fromEntity(countryRepository.save(entity));
   }
+
+  public Country updateCountryName(Country country) {
+    var entity = countryRepository.findById(country.id()).orElseThrow();
+    entity.setCountryName(country.countryName());
+    return Country.fromEntity(countryRepository.save(entity));
+  }
 }
