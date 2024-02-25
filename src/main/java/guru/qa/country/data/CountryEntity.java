@@ -24,6 +24,16 @@ public class CountryEntity {
   @Column(name = "country_code")
   private String countryCode;
 
+  public CountryEntity(){
+
+  }
+
+  public CountryEntity(UUID id, String countryName, String countryCode) {
+    this.id = id;
+    this.countryName = countryName;
+    this.countryCode = countryCode;
+  }
+
   public UUID getId() {
     return id;
   }
